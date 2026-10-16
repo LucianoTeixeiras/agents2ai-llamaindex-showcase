@@ -5,7 +5,7 @@
 | **ID** | SPEC-LI-03 |
 | **Status** | Pronta (após aceite das ADRs) |
 | **PRD / System Design / ADRs** | `prd-copilot-rag-multimodal-llamaindex.md` · `system-design-copilot-rag-multimodal-llamaindex.md` System Design §4, §5 · ADR-004 |
-| **Jira** | pendente — D-01 |
+| **Jira** | [A2LI-4](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-4) (épico A2LI-1) |
 | **Branch** | `feat/li-03-readers-pdf-docx` |
 | **Executor sugerido** | `spec-executor` em Cursor + Composer (D-03) |
 | **Risco QA** | `qa:risk-medium` |
@@ -58,4 +58,4 @@ Mín. 8: PDF fixture gera 1 doc por página com `page`; tabela vira markdown; p�
 ## 10. PR
 Título: ver abaixo. Corpo: Spec · O que foi feito · Evidência dos portões (saída real) · Desvios · Checklist DoD · Risco QA.
 
-Título: `feat(ingestao): readers de PDF e DOCX com OCR e metadados de citação [pendente]`
+Título: `feat(ingestao): readers de PDF e DOCX com OCR e metadados de citação [A2LI-4]`

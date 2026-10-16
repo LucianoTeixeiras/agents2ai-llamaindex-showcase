@@ -5,7 +5,7 @@
 | **ID** | SPEC-LI-09 |
 | **Status** | Pronta (após aceite das ADRs) |
 | **PRD / System Design / ADRs** | `prd-copilot-rag-multimodal-llamaindex.md` · `system-design-copilot-rag-multimodal-llamaindex.md` System Design §9 · ADR-007 |
-| **Jira** | pendente — D-01 |
+| **Jira** | [A2LI-10](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-10) (épico A2LI-1) |
 | **Branch** | `feat/li-09-tracing-evals-readme` |
 | **Executor sugerido** | `spec-executor` em Cursor + Composer (D-03) |
 | **Risco QA** | `qa:risk-medium` |
@@ -57,4 +57,4 @@ Mín. 8: trace tem um item por passo executado; log JSON sem prompt/texto de doc
 ## 10. PR
 Título: ver abaixo. Corpo: Spec · O que foi feito · Evidência dos portões (saída real) · Desvios · Checklist DoD · Risco QA.
 
-Título: `feat(evals): tracing por passo e evals de RAG e SQL [pendente]`
+Título: `feat(evals): tracing por passo e evals de RAG e SQL [A2LI-10]`

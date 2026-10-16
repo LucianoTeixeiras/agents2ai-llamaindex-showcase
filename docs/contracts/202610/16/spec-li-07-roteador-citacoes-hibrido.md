@@ -5,7 +5,7 @@
 | **ID** | SPEC-LI-07 |
 | **Status** | Pronta (após aceite das ADRs) |
 | **PRD / System Design / ADRs** | `prd-copilot-rag-multimodal-llamaindex.md` · `system-design-copilot-rag-multimodal-llamaindex.md` System Design §2, §5 · ADR-001, ADR-006 |
-| **Jira** | pendente — D-01 |
+| **Jira** | [A2LI-8](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-8) (épico A2LI-1) |
 | **Branch** | `feat/li-07-roteador-citacoes-hibrido` |
 | **Executor sugerido** | `spec-executor` em Cursor + Composer (D-03) |
 | **Risco QA** | `qa:risk-medium` |
@@ -56,4 +56,4 @@ Mín. 10 (MockLLM roteirizado): cada rota leva ao ramo certo; LLM inválido → 
 ## 10. PR
 Título: ver abaixo. Corpo: Spec · O que foi feito · Evidência dos portões (saída real) · Desvios · Checklist DoD · Risco QA.
 
-Título: `feat(workflow): roteador, citações e rota híbrida [pendente]`
+Título: `feat(workflow): roteador, citações e rota híbrida [A2LI-8]`

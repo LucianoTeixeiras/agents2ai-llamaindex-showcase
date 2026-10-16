@@ -5,7 +5,7 @@
 | **ID** | SPEC-LI-08 |
 | **Status** | Pronta (após aceite das ADRs) |
 | **PRD / System Design / ADRs** | `prd-copilot-rag-multimodal-llamaindex.md` · `system-design-copilot-rag-multimodal-llamaindex.md` System Design §2, §8a · ADR-006 |
-| **Jira** | pendente — D-01 |
+| **Jira** | [A2LI-9](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-9) (épico A2LI-1) |
 | **Branch** | `feat/li-08-hitl-cli-docker` |
 | **Executor sugerido** | `spec-executor` em Cursor + Composer (D-03) |
 | **Risco QA** | `qa:risk-medium` |
@@ -58,4 +58,4 @@ Mín. 6: acima do limite pausa; aprovado executa; negado responde recusa sem exe
 ## 10. PR
 Título: ver abaixo. Corpo: Spec · O que foi feito · Evidência dos portões (saída real) · Desvios · Checklist DoD · Risco QA.
 
-Título: `feat(hitl): aprovação humana, CLI e Docker Compose com Ollama [pendente]`
+Título: `feat(hitl): aprovação humana, CLI e Docker Compose com Ollama [A2LI-9]`

@@ -1,11 +1,11 @@
-# SPEC-LI-10 — Fase 2: backend BigQuery público com dry-run de custo
+# SPEC-LI-10 — [BLOQUEADA] Fase 2: backend BigQuery público com dry-run de custo
 
 | Campo | Valor |
 |-------|-------|
 | **ID** | SPEC-LI-10 |
 | **Status** | Bloqueada |
 | **PRD / System Design / ADRs** | `prd-copilot-rag-multimodal-llamaindex.md` · `system-design-copilot-rag-multimodal-llamaindex.md` System Design §6, §8 · ADR-002, ADR-006 |
-| **Jira** | pendente — D-01 |
+| **Jira** | [A2LI-11](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-11) (épico A2LI-1) |
 | **Branch** | `feat/li-10-fase2-bigquery-publico` |
 | **Executor sugerido** | `spec-executor` em Cursor + Composer (D-03) |
 | **Risco QA** | `qa:risk-high` |
@@ -52,4 +52,4 @@ BigQuery mockado; nenhum teste live no CI.
 ## 10. PR
 Título: ver abaixo. Corpo: Spec · O que foi feito · Evidência dos portões (saída real) · Desvios · Checklist DoD · Risco QA.
 
-Título: `feat(sql): backend BigQuery público com dry-run [pendente]`
+Título: `feat(sql): backend BigQuery público com dry-run [A2LI-11]`

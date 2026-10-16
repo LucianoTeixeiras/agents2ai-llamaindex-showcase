@@ -5,7 +5,7 @@
 | **ID** | SPEC-LI-04 |
 | **Status** | Pronta (após aceite das ADRs) |
 | **PRD / System Design / ADRs** | `prd-copilot-rag-multimodal-llamaindex.md` · `system-design-copilot-rag-multimodal-llamaindex.md` System Design §4, §5 · ADR-004 |
-| **Jira** | pendente — D-01 |
+| **Jira** | [A2LI-5](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-5) (épico A2LI-1) |
 | **Branch** | `feat/li-04-readers-pptx-xlsx-imagens` |
 | **Executor sugerido** | `spec-executor` em Cursor + Composer (D-03) |
 | **Risco QA** | `qa:risk-medium` |
@@ -55,4 +55,4 @@ Mín. 8: PPTX fixture gera 4 docs com `slide` 1..4 e notas; XLSX gera 2 docs com
 ## 10. PR
 Título: ver abaixo. Corpo: Spec · O que foi feito · Evidência dos portões (saída real) · Desvios · Checklist DoD · Risco QA.
 
-Título: `feat(ingestao): readers de PPTX, XLSX e imagens [pendente]`
+Título: `feat(ingestao): readers de PPTX, XLSX e imagens [A2LI-5]`

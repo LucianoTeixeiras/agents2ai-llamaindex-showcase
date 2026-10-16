@@ -5,7 +5,7 @@
 | **Status** | Proposto (2026-10-16) — aguardando aceite de Luciano |
 | **Data** | 2026-10-16 |
 | **Decisores** | Luciano Teixeira (aceite) · Dev Grok Bot (proposta) |
-| **Jira** | pendente — D-01 |
+| **Jira** | [A2LI-12](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-12) (aceite das ADRs, épico A2LI-1) |
 | **Relacionados** | PRD e System Design `docs/contracts/202610/16/`; LangGraph showcase ADR-006 (DuckDB vss) |
 
 ## Contexto (2026-10-16)

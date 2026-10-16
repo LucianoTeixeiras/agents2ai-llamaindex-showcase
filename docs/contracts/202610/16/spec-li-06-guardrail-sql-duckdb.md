@@ -5,7 +5,7 @@
 | **ID** | SPEC-LI-06 |
 | **Status** | Pronta (após aceite das ADRs) |
 | **PRD / System Design / ADRs** | `prd-copilot-rag-multimodal-llamaindex.md` · `system-design-copilot-rag-multimodal-llamaindex.md` System Design §6 · ADR-006 |
-| **Jira** | pendente — D-01 |
+| **Jira** | [A2LI-7](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-7) (épico A2LI-1) |
 | **Branch** | `feat/li-06-guardrail-sql-duckdb` |
 | **Executor sugerido** | `spec-executor` em Cursor + Composer (D-03) |
 | **Risco QA** | `qa:risk-medium` |
@@ -56,4 +56,4 @@ Mín. 16: os 14 casos da SPEC-LG-02 adaptados (ex.: `SELECT Email FROM Customer`
 ## 10. PR
 Título: ver abaixo. Corpo: Spec · O que foi feito · Evidência dos portões (saída real) · Desvios · Checklist DoD · Risco QA.
 
-Título: `feat(sql): guardrail sqlglot e ferramenta NL→SQL em DuckDB [pendente]`
+Título: `feat(sql): guardrail sqlglot e ferramenta NL→SQL em DuckDB [A2LI-7]`

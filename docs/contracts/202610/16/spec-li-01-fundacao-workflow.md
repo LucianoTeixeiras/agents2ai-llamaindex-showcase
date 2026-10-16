@@ -5,7 +5,7 @@
 | **ID** | SPEC-LI-01 |
 | **Status** | Pronta (após aceite das ADRs) |
 | **PRD / System Design / ADRs** | `prd-copilot-rag-multimodal-llamaindex.md` · `system-design-copilot-rag-multimodal-llamaindex.md` System Design §2, §3, §8 · ADR-001, ADR-003 |
-| **Jira** | pendente — D-01 |
+| **Jira** | [A2LI-2](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-2) (épico A2LI-1) |
 | **Branch** | `feat/li-01-fundacao-workflow` |
 | **Executor sugerido** | `spec-executor` em Cursor + Composer (D-03) |
 | **Risco QA** | `qa:risk-low` |
@@ -57,4 +57,4 @@ Mín. 6: settings lê env e defaults; `build_llm` com `mock` retorna `MockLLM`; 
 ## 10. PR
 Título: ver abaixo. Corpo: Spec · O que foi feito · Evidência dos portões (saída real) · Desvios · Checklist DoD · Risco QA.
 
-Título: `feat(fundacao): settings, fábrica de modelos e workflow stub em LlamaIndex [pendente]`
+Título: `feat(fundacao): settings, fábrica de modelos e workflow stub em LlamaIndex [A2LI-2]`

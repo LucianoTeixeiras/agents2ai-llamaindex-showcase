@@ -5,7 +5,7 @@
 | **ID** | SPEC-LI-02 |
 | **Status** | Pronta (após aceite das ADRs) |
 | **PRD / System Design / ADRs** | `prd-copilot-rag-multimodal-llamaindex.md` · `system-design-copilot-rag-multimodal-llamaindex.md` System Design §7 · ADR-002 |
-| **Jira** | pendente — D-01 |
+| **Jira** | [A2LI-3](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-3) (épico A2LI-1) |
 | **Branch** | `feat/li-02-corpus-publico-manifest` |
 | **Executor sugerido** | `spec-executor` em Cursor + Composer (D-03) |
 | **Risco QA** | `qa:risk-medium` |
@@ -57,4 +57,4 @@ Mín. 6 (sem rede; `httpx` mockado): manifest tem url/sha256/licença; sha256 co
 ## 10. PR
 Título: ver abaixo. Corpo: Spec · O que foi feito · Evidência dos portões (saída real) · Desvios · Checklist DoD · Risco QA.
 
-Título: `feat(dados): corpus público, manifest e documentos sintéticos [pendente]`
+Título: `feat(dados): corpus público, manifest e documentos sintéticos [A2LI-3]`

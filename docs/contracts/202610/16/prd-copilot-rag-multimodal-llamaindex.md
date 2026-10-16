@@ -5,7 +5,7 @@
 | **Status** | Proposto (2026-10-16) — aguardando aceite de Luciano |
 | **Autor (arquiteto)** | Dev Grok Bot (planner) |
 | **Dono do produto** | Luciano Teixeira |
-| **Jira (épico)** | pendente — D-01 (chave do projeto a definir por Luciano) |
+| **Jira (épico)** | [A2LI-1](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-1) (projeto `A2LI`, Kanban team-managed) |
 | **Nível de risco QA** | `qa:risk-medium` (ingere documentos de terceiros, gera e executa SQL; repositório público) |
 | **Documentos relacionados** | `system-design-copilot-rag-multimodal-llamaindex.md`, ADR-001…007, specs `spec-li-01…10`, `docs/design/design-system.md` |
 
@@ -80,7 +80,7 @@ Ver ADR-006. Somente dados públicos (ADR-002); segredos só em `.env`; document
 | Licença de corpus | só fontes com licença registrada; arXiv baixado sob demanda, não versionado |
 
 ## 9. Decisões em aberto
-- **D-01** Chave Jira do projeto: `[pendente]` (sugestão `A2LI`); até lá commits com `[pendente]`.
+- **D-01** ~~Chave Jira~~ **Decidido (2026-10-16):** projeto `A2LI`, épico A2LI-1; specs LI-01…LI-10 = A2LI-2…A2LI-11; aceite das ADRs = A2LI-12.
 - **D-02** SLM padrão e hardware de referência (sugestão: `qwen2.5:7b-instruct` com GPU ≥ 8 GB; `qwen2.5:3b-instruct` em CPU). Afeta metas O4/O6 e latência.
 - **D-03** Harness de execução: Cursor + Composer (como no LangGraph showcase) ou Antigravity.
 - **D-04** Vector store padrão: DuckDB `vss` (recomendado) ou Qdrant (ADR-005).
