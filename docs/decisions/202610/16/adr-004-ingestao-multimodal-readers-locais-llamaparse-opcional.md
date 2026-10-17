@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |-------|-------|
-| **Status** | Proposto (2026-10-16) — aguardando aceite de Luciano |
+| **Status** | Aceita (2026-10-16) — aceita por Luciano |
 | **Data** | 2026-10-16 |
 | **Decisores** | Luciano Teixeira (aceite) · Dev Grok Bot (proposta) |
 | **Jira** | [A2LI-12](https://lucianoteixeiras-1773934569563.atlassian.net/browse/A2LI-12) (aceite das ADRs, épico A2LI-1) |
