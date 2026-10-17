@@ -5,7 +5,7 @@
 ## 1. Git
 - **Proibido commitar direto em `main`** (protegida, exige CI verde). Trabalhe em `feat/`, `fix/`, `docs/`, `chore/`.
 - Antes de editar: `git branch --show-current`; se for `main`, crie a branch.
-- Commits/PRs em pt-BR: `<tipo>(<escopo>): <descrição> [<CHAVE-NN>]` (use `[pendente]` enquanto não houver projeto Jira).
+- Commits/PRs em pt-BR: `<tipo>(<escopo>): <descrição> [<CHAVE-NN>]` (projeto Jira `A2LI`; chave de cada spec no cabeçalho dela).
 - Nunca `git add -A`/`git add .`; nunca faça merge do próprio PR; nunca force-push em branch compartilhada.
 
 ## 2. Modelo arquiteto → executor (ADR-067 do Hub)
