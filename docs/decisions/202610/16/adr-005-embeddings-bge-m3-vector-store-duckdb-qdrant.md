@@ -13,7 +13,7 @@ Corpus pt-BR + inglês, execução local, demo simples de rodar. O LangGraph sho
 
 ## Decisão
 1. **Embeddings recomendados:** `bge-m3` (multilíngue, 1024 dim) servido pelo Ollama via `llama-index-embeddings-ollama==0.10.0`. Alternativa sem Ollama: `BAAI/bge-m3` via `llama-index-embeddings-huggingface==0.8.0`.
-2. **Vector store recomendado:** DuckDB via `llama-index-vector-stores-duckdb==0.7.0`, arquivo `data/index/vectors.duckdb` (fora do Git); mesmo motor das tabelas SQL, zero serviço extra. Uso de índice HNSW (`vss`) **não verificado** nesse integration; se ausente, busca exata é suficiente para o corpus de demo.
+2. **Vector store recomendado:** DuckDB via `llama-index-vector-stores-duckdb==0.7.0`, arquivo `data/index/vectors.duckdb` (fora do Git); mesmo motor das tabelas SQL, zero serviço extra. A integração (0.7.0, conferida) usa **busca exata** (`array_cosine_similarity`), sem HNSW/`vss`; suficiente para o corpus de demo. **HNSW fora de escopo**; se necessário no futuro, spec própria usando `vss` diretamente.
 3. **Opcional:** Qdrant (`VECTOR_STORE=qdrant`, profile do compose) para mostrar caminho de escala e filtros ricos.
 4. Testes: `MockEmbedding(embed_dim=8)` e store em memória.
 

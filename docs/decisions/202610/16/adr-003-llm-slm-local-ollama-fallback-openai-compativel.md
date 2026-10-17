@@ -13,7 +13,7 @@ Soberania de dados é argumento central para jurídico/GED. O copilot já usa Ol
 
 ## Decisão
 1. `LLM_PROVIDER=ollama` (padrão) com `llama-index-llms-ollama==0.11.0`; **recomendado** `qwen2.5:7b-instruct` com GPU ≥ 8 GB e `qwen2.5:3b-instruct` em CPU (D-02 em aberto).
-2. Fallback `openai_like` (`llama-index-llms-openai-like==0.8.1`): OpenRouter, Groq, vLLM, LM Studio, etc.
+2. Fallback `openai_like` (`llama-index-llms-openai-like==0.8.1`): OpenRouter, Groq, vLLM, LM Studio, etc. **Padrão do fallback:** `nvidia/nemotron-3.5-lightning` via OpenRouter (mesmo do agents2ai-langgraph-showcase); chave só em `.env`.
 3. Roteamento e geração de SQL usam saída estruturada (Pydantic) com `temperature=0`.
 4. Testes usam `MockLLM`; nenhuma chamada real no CI.
 

@@ -40,6 +40,7 @@ Dependências → detect → ocr → readers → CI → testes → portões → 
 Mín. 8: PDF fixture gera 1 doc por página com `page`; tabela vira markdown; página escaneada → `ocr=True` e texto não vazio (marcador `ocr`); DOCX preserva títulos e tabela; `.docm` → `unsupported_type`; >50 MB → `file_too_large`; PDF renomeado para .docx → `signature_mismatch`; metadados obrigatórios presentes.
 
 ## 7. Definição de Pronto (DoD)
+- [ ] Testes usam só `MockLLM`/`MockEmbedding` (ou dublês locais); **zero rede** — sem Ollama, OpenRouter, LlamaParse, BigQuery ou download no `pytest`.
 - [ ] Só os arquivos da §4 mudaram (`git diff --stat main`).
 - [ ] `uv sync --locked --group dev`, `uv run ruff check .`, `uv run pytest -q` verdes localmente e no CI (incl. gitleaks).
 - [ ] Nenhum teste com `skip`/`xfail` novo (exceto marcador `ocr` previsto na ADR-004); nenhuma chamada de rede, Ollama, LlamaParse ou LLM real nos testes.

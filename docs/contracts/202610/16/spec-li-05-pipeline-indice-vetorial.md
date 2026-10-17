@@ -20,7 +20,7 @@
 Roteamento, síntese, SQL.
 
 ## 3. Contexto mínimo
-`from llama_index.core.ingestion import IngestionPipeline`; `from llama_index.core.node_parser import SentenceSplitter`; `from llama_index.vector_stores.duckdb import DuckDBVectorStore` (import conferido em 0.7.0; parâmetros do construtor **não verificados** — confira assinatura e escale se divergir). Filtro: `MetadataFilters([ExactMatchFilter(key="file_type", value=...)])`. Testes com `MockEmbedding(embed_dim=8)`.
+`from llama_index.core.ingestion import IngestionPipeline`; `from llama_index.core.node_parser import SentenceSplitter`; `from llama_index.vector_stores.duckdb import DuckDBVectorStore` (assinatura conferida em 0.7.0: `DuckDBVectorStore(database_name=':memory:', table_name='documents', embed_dim=None, text_search_config=None, persist_dir='./storage', client=None, **kwargs)`). **Valores fixos:** produção `DuckDBVectorStore(database_name="vectors.duckdb", table_name="documents", embed_dim=1024, persist_dir="data/index")` (bge-m3 = 1024 dims); testes `DuckDBVectorStore(database_name=":memory:", embed_dim=8)` com `MockEmbedding(embed_dim=8)`. Busca é **exata** (`array_cosine_similarity`), sem HNSW/`vss` — não tente criar índice HNSW. Filtro: `MetadataFilters([ExactMatchFilter(key="file_type", value=...)])`. Testes com `MockEmbedding(embed_dim=8)`.
 
 ## 4. Arquivos e interfaces
 | Arquivo | Ação | O que muda |
@@ -34,9 +34,10 @@ Roteamento, síntese, SQL.
 Dependências → pipeline → retrieval → testes → portões → PR.
 
 ## 6. Testes
-Mín. 6: ingestão dos fixtures cria nós com metadados; reingestão não duplica (sha256); `search` retorna k resultados; filtro `file_type=pptx` só traz slides; índice reabre após fechar; Qdrant só com `VECTOR_STORE=qdrant` (teste com cliente em memória `location=':memory:'`).
+Mín. 6: ingestão dos fixtures cria nós com metadados; reingestão não duplica (sha256); `search` retorna k resultados; filtro `file_type=pptx` só traz slides; índice reabre após fechar (use `tmp_path` como `persist_dir`); Qdrant só com `VECTOR_STORE=qdrant` (teste com cliente em memória `location=':memory:'`).
 
 ## 7. Definição de Pronto (DoD)
+- [ ] Testes usam só `MockLLM`/`MockEmbedding` (ou dublês locais); **zero rede** — sem Ollama, OpenRouter, LlamaParse, BigQuery ou download no `pytest`.
 - [ ] Só os arquivos da §4 mudaram (`git diff --stat main`).
 - [ ] `uv sync --locked --group dev`, `uv run ruff check .`, `uv run pytest -q` verdes localmente e no CI (incl. gitleaks).
 - [ ] Nenhum teste com `skip`/`xfail` novo (exceto marcador `ocr` previsto na ADR-004); nenhuma chamada de rede, Ollama, LlamaParse ou LLM real nos testes.

@@ -39,6 +39,7 @@ Dependências → scripts → gerar fixtures → testes → portões → PR.
 Mín. 6 (sem rede; `httpx` mockado): manifest tem url/sha256/licença; sha256 confere; arXiv só com flag; sintéticos abrem com as libs; xlsx tem 2 abas; fixtures < 100 KB.
 
 ## 7. Definição de Pronto (DoD)
+- [ ] Testes usam só `MockLLM`/`MockEmbedding` (ou dublês locais); **zero rede** — sem Ollama, OpenRouter, LlamaParse, BigQuery ou download no `pytest`.
 - [ ] Só os arquivos da §4 mudaram (`git diff --stat main`).
 - [ ] `uv sync --locked --group dev`, `uv run ruff check .`, `uv run pytest -q` verdes localmente e no CI (incl. gitleaks).
 - [ ] Nenhum teste com `skip`/`xfail` novo (exceto marcador `ocr` previsto na ADR-004); nenhuma chamada de rede, Ollama, LlamaParse ou LLM real nos testes.

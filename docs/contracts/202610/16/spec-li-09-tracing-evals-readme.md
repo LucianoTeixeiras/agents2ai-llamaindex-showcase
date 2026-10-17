@@ -39,6 +39,7 @@ Tracing → métricas → golden sets → runner → README → testes → port�
 Mín. 8: trace tem um item por passo executado; log JSON sem prompt/texto de documento; hit rate e MRR calculados certo em exemplo fixo; acurácia SQL compara resultados; adversarial: 0 execução perigosa; runner offline roda no CI em < 60 s.
 
 ## 7. Definição de Pronto (DoD)
+- [ ] Testes usam só `MockLLM`/`MockEmbedding` (ou dublês locais); **zero rede** — sem Ollama, OpenRouter, LlamaParse, BigQuery ou download no `pytest`.
 - [ ] Só os arquivos da §4 mudaram (`git diff --stat main`).
 - [ ] `uv sync --locked --group dev`, `uv run ruff check .`, `uv run pytest -q` verdes localmente e no CI (incl. gitleaks).
 - [ ] Nenhum teste com `skip`/`xfail` novo (exceto marcador `ocr` previsto na ADR-004); nenhuma chamada de rede, Ollama, LlamaParse ou LLM real nos testes.

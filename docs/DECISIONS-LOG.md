@@ -34,3 +34,13 @@ Contexto: Luciano escolheu **showcase público e separado**, somente dados públ
 - **D-04** Vector store padrão: DuckDB (recomendado) ou Qdrant.
 - **D-05** Destino OTel (sugestão Langfuse local).
 - **D-06** Aceite das ADRs 001…007.
+
+## 2026-10-16 — Revisão do arquiteto (Dev Grok Bot) — [A2LI-12]
+Correções aplicadas: assinatura real `DuckDBVectorStore` 0.7.0 (busca exata, HNSW fora de escopo — SPEC-LI-05/ADR-005); `Context.wait_for_event` conferido em 0.14.25 com padrão `waiter_event` + timeout (SPEC-LI-08); DoD sem rede em todas as specs; aviso de nuvem do LlamaParse (ADR-004); teste de prompt injection em PDF (SPEC-LI-07); `.dockerignore` (SPEC-LI-08); fallback Nemotron (ADR-003). ADRs seguem **Proposto**.
+
+| Decisão | Recomendação | Status |
+|---|---|---|
+| D-02 SLM/hardware | `qwen2.5:7b-instruct` (GPU ≥ 8 GB), `qwen2.5:3b-instruct` (CPU), fallback `nvidia/nemotron-3.5-lightning` via OpenRouter | Recomendado — aguarda aceite do Luciano |
+| D-03 Harness | Cursor + Composer (padrão já usado; regras e guia prontos) | Recomendado — aguarda aceite do Luciano |
+| D-04 Vector store | DuckDB padrão (busca exata); Qdrant opcional | Recomendado — aguarda aceite do Luciano |
+| D-05 Traces | trace JSON por passo padrão; Langfuse local opcional via OpenInference em profile do compose | Recomendado — aguarda aceite do Luciano |

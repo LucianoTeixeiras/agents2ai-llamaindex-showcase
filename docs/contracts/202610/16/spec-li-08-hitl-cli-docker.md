@@ -20,7 +20,7 @@ Aprovação humana via `InputRequiredEvent`/`HumanResponseEvent` para SQL acima 
 UI web, API HTTP, BigQuery.
 
 ## 3. Contexto mínimo
-Eventos conferidos em 0.14.25: `from llama_index.core.workflow import InputRequiredEvent, HumanResponseEvent`. Padrão: o passo emite `ctx.write_event_to_stream(InputRequiredEvent(prefix=...))` e aguarda `await ctx.wait_for_event(HumanResponseEvent)` (assinatura **não verificada** — confira e escale se divergir). Efeito colateral nunca antes da aprovação. CLI com `argparse` (sem dependência nova).
+Eventos conferidos em 0.14.25: `from llama_index.core.workflow import InputRequiredEvent, HumanResponseEvent`. Assinatura conferida em 0.14.25: `Context.wait_for_event(event_type, waiter_event=None, waiter_id=None, requirements=None, timeout=2000)`. **Padrão obrigatório:** `resp = await ctx.wait_for_event(HumanResponseEvent, waiter_event=InputRequiredEvent(prefix=...), timeout=settings.hitl_timeout_s)` — o `waiter_event` é emitido no stream pelo próprio `wait_for_event` (não chame `write_event_to_stream` separado). `hitl_timeout_s` padrão 300; estouro de timeout = negado. Efeito colateral nunca antes da aprovação. CLI com `argparse` (sem dependência nova).
 
 ## 4. Arquivos e interfaces
 | Arquivo | Ação | O que muda |
@@ -29,6 +29,7 @@ Eventos conferidos em 0.14.25: `from llama_index.core.workflow import InputRequi
 | `src/showcase/cli.py` | criar | `main()`; `[project.scripts] showcase = "showcase.cli:main"` |
 | `pyproject.toml` / `uv.lock` | alterar | entry point |
 | `Dockerfile` | criar | python 3.12-slim + uv + tesseract |
+| `.dockerignore` | criar | `.git`, `.venv`, `.env*`, `data/`, `*.duckdb`, `qdrant_storage/`, `.cache/`, `tests/` |
 | `docker-compose.yml` | criar | `ollama` (healthcheck), `app`, profile `qdrant` |
 | `.env.example` | criar | variáveis do System Design §8 sem valores secretos |
 | `tests/test_hitl.py` | criar | §6 |
@@ -37,9 +38,10 @@ Eventos conferidos em 0.14.25: `from llama_index.core.workflow import InputRequi
 Workflow → CLI → Docker → testes → portões → PR.
 
 ## 6. Testes
-Mín. 6: acima do limite pausa; aprovado executa; negado responde recusa sem executar; abaixo do limite não pausa; LlamaParse sem aprovação não é chamado; `showcase --help` funciona.
+Mín. 6: acima do limite pausa; aprovado executa; negado responde recusa sem executar; abaixo do limite não pausa; LlamaParse sem aprovação não é chamado; `showcase --help` funciona; timeout (teste com `timeout=0.1` explícito) resulta em recusa sem executar.
 
 ## 7. Definição de Pronto (DoD)
+- [ ] Testes usam só `MockLLM`/`MockEmbedding` (ou dublês locais); **zero rede** — sem Ollama, OpenRouter, LlamaParse, BigQuery ou download no `pytest`.
 - [ ] Só os arquivos da §4 mudaram (`git diff --stat main`).
 - [ ] `uv sync --locked --group dev`, `uv run ruff check .`, `uv run pytest -q` verdes localmente e no CI (incl. gitleaks).
 - [ ] Nenhum teste com `skip`/`xfail` novo (exceto marcador `ocr` previsto na ADR-004); nenhuma chamada de rede, Ollama, LlamaParse ou LLM real nos testes.

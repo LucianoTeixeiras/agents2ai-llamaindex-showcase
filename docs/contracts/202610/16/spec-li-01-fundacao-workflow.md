@@ -39,6 +39,7 @@ Dependências → settings → models → events → workflow → testes → por
 Mín. 6: settings lê env e defaults; `build_llm` com `mock` retorna `MockLLM`; provider inválido → `ValueError`; workflow roda até `StopEvent` com pergunta stub; pergunta vazia → rota `out_of_scope`; `trace` não vazio no resultado.
 
 ## 7. Definição de Pronto (DoD)
+- [ ] Testes usam só `MockLLM`/`MockEmbedding` (ou dublês locais); **zero rede** — sem Ollama, OpenRouter, LlamaParse, BigQuery ou download no `pytest`.
 - [ ] Só os arquivos da §4 mudaram (`git diff --stat main`).
 - [ ] `uv sync --locked --group dev`, `uv run ruff check .`, `uv run pytest -q` verdes localmente e no CI (incl. gitleaks).
 - [ ] Nenhum teste com `skip`/`xfail` novo (exceto marcador `ocr` previsto na ADR-004); nenhuma chamada de rede, Ollama, LlamaParse ou LLM real nos testes.

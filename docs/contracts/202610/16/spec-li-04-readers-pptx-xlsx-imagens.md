@@ -37,6 +37,7 @@ Readers → tables → testes → portões → PR.
 Mín. 8: PPTX fixture gera 4 docs com `slide` 1..4 e notas; XLSX gera 2 docs com `sheet`; tabelas `sheet_vendas_faturamento` e `sheet_vendas_generos` existem; nomes normalizados; truncamento a 200 linhas; PNG gera texto via OCR (`ocr`); `.xlsm` rejeitado; `READERS` cobre as 7 extensões.
 
 ## 7. Definição de Pronto (DoD)
+- [ ] Testes usam só `MockLLM`/`MockEmbedding` (ou dublês locais); **zero rede** — sem Ollama, OpenRouter, LlamaParse, BigQuery ou download no `pytest`.
 - [ ] Só os arquivos da §4 mudaram (`git diff --stat main`).
 - [ ] `uv sync --locked --group dev`, `uv run ruff check .`, `uv run pytest -q` verdes localmente e no CI (incl. gitleaks).
 - [ ] Nenhum teste com `skip`/`xfail` novo (exceto marcador `ocr` previsto na ADR-004); nenhuma chamada de rede, Ollama, LlamaParse ou LLM real nos testes.

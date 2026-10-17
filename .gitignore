@@ -235,3 +235,8 @@ data/raw/
 data/index/
 qdrant_storage/
 .cache/
+
+# Ollama / modelos locais
+.ollama/
+*.gguf
+langfuse_data/
